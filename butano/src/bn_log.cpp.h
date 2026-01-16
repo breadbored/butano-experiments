@@ -7,7 +7,7 @@
 
 #if BN_CFG_LOG_ENABLED
     #include "bn_log_level.h"
-    #include "../hw/include/bn_hw_log.h"
+    #include "bn_hw_log.h"
 
     namespace bn
     {

@@ -6,7 +6,7 @@
 #include "bn_cstring.h"
 
 #include "bn_assert.h"
-#include "../hw/include/bn_hw_memory.h"
+#include "bn_hw_memory.h"
 
 namespace bn
 {

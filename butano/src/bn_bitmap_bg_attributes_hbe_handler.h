@@ -8,7 +8,7 @@
 
 #include "bn_bitmap_bg_attributes.h"
 #include "bn_bgs_manager.h"
-#include "../hw/include/bn_hw_bgs.h"
+#include "bn_hw_bgs.h"
 
 namespace bn
 {

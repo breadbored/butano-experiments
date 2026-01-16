@@ -8,7 +8,7 @@
 
 #include "bn_display_manager.h"
 #include "bn_blending_fade_alpha.h"
-#include "../hw/include/bn_hw_display.h"
+#include "bn_hw_display.h"
 
 namespace bn
 {

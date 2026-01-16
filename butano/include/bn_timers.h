@@ -13,7 +13,7 @@
  * @ingroup timer
  */
 
-#include "../hw/include/bn_hw_timer_constants.h"
+#include "bn_hw_timer_constants.h"
 
 /**
  * @brief Timing related functions.

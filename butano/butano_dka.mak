@@ -43,7 +43,7 @@ ifdef ADD_COMPILE_COMMAND
 endif
 	@echo $(OFILES) > bn_ofiles.txt
 	$(SILENTCMD)$(LD) $(LDFLAGS) -specs=gba_mb.specs @bn_ofiles.txt $(LIBPATHS) $(LIBS) -o $@
-	
+
 %.elf:
 	$(SILENTMSG) Linking ROM...
 ifdef ADD_COMPILE_COMMAND
@@ -72,7 +72,7 @@ include $(BN_TOOLS)/common_setup.mak
 
 #---------------------------------------------------------------------------------------------------------------------
 else
- 
+
 #---------------------------------------------------------------------------------------------------------------------
 # Main targets:
 #---------------------------------------------------------------------------------------------------------------------

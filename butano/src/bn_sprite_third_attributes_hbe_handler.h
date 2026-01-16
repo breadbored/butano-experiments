@@ -8,7 +8,7 @@
 
 #include "bn_sprite_third_attributes.h"
 #include "bn_sprites_manager.h"
-#include "../hw/include/bn_hw_sprites.h"
+#include "bn_hw_sprites.h"
 
 namespace bn
 {

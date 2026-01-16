@@ -6,7 +6,7 @@
 #include "bn_hblank_effects_manager.h"
 
 #include "bn_vector.h"
-#include "../hw/include/bn_hw_hblank_effects.h"
+#include "bn_hw_hblank_effects.h"
 
 #include "bn_bg_palette_color_hbe_handler.h"
 #include "bn_bg_palettes_transparent_color_hbe_handler.h"

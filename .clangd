@@ -1,0 +1,19 @@
+CompileFlags:
+  Add:
+    - "-xc++"
+    - "-std=c++20"
+    - "-I/Users/jasonbcarpenter/butano-experiments/include"
+    - "-I/Users/jasonbcarpenter/butano-experiments/butano/hw/include"
+    - "-I/Users/jasonbcarpenter/butano-experiments/butano/include"
+    - "-I/Users/jasonbcarpenter/butano-experiments/common/include"
+    - "-I/opt/devkitpro/libgba/include"
+    - "-I/opt/devkitpro/devkitARM/include"
+    - "-I/opt/devkitpro/devkitARM/arm-none-eabi/include"
+    - "-I/Users/jasonbcarpenter/butano-experiments/build"
+  Compiler: /opt/devkitpro/devkitARM/bin/arm-none-eabi-g++
+
+Index:
+  Background: Build
+
+Diagnostics:
+  UnusedIncludes: None

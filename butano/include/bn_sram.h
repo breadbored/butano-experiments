@@ -15,7 +15,7 @@
 
 #include "bn_assert.h"
 #include "bn_span_fwd.h"
-#include "../hw/include/bn_hw_sram_constants.h"
+#include "bn_hw_sram_constants.h"
 
 /// @cond DO_NOT_DOCUMENT
 

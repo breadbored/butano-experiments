@@ -7,7 +7,7 @@
 #define BN_SPRITE_VERTICAL_POSITION_HBE_HANDLER_H
 
 #include "bn_sprites_manager.h"
-#include "../hw/include/bn_hw_sprites.h"
+#include "bn_hw_sprites.h"
 
 namespace bn
 {

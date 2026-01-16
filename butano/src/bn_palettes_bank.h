@@ -14,7 +14,7 @@
 #include "bn_unordered_map.h"
 #include "bn_identity_hasher.h"
 #include "bn_palette_effect_type.h"
-#include "../hw/include/bn_hw_palettes.h"
+#include "bn_hw_palettes.h"
 
 namespace bn
 {

@@ -7,7 +7,7 @@
 
 #include "bn_math.h"
 #include "bn_memory.h"
-#include "../hw/include/bn_hw_palettes.h"
+#include "bn_hw_palettes.h"
 
 namespace bn::color_effect
 {

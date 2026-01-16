@@ -9,7 +9,7 @@
 #include "bn_sprite_ptr.h"
 #include "bn_sprite_builder.h"
 #include "bn_top_left_utils.h"
-#include "../hw/include/bn_hw_sprite_tiles.h"
+#include "bn_hw_sprite_tiles.h"
 
 namespace bn
 {

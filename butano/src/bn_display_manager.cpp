@@ -9,7 +9,7 @@
 #include "bn_mosaic_attributes.h"
 #include "bn_bgs_manager.h"
 #include "bn_sprites_manager.h"
-#include "../hw/include/bn_hw_display.h"
+#include "bn_hw_display.h"
 
 #include "bn_window.cpp.h"
 #include "bn_blending.cpp.h"

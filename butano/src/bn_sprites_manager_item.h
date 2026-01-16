@@ -16,7 +16,7 @@
 #include "bn_sprite_palette_ptr.h"
 #include "bn_sprite_affine_mat_ptr.h"
 #include "bn_sprite_affine_mats_manager.h"
-#include "../hw/include/bn_hw_sprites.h"
+#include "bn_hw_sprites.h"
 
 namespace bn
 {

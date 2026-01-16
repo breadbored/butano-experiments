@@ -1,12 +1,19 @@
 #---------------------------------------------------------------------------------------------------------------------
 # Toolchain auto detection:
 #---------------------------------------------------------------------------------------------------------------------
-ifneq ($(strip $(DEVKITARM)),)
-	include $(LIBBUTANOABS)/butano_dka.mak
+ifneq ($(strip $(BNSDL)),)
+	unexport DEVKITARM
+	unexport DEVKITPRO
+	unexport WONDERFUL_TOOLCHAIN
+	include $(LIBBUTANOABS)/butano_sdl.mak
 else
-	ifneq ($(strip $(WONDERFUL_TOOLCHAIN)),)
-		include $(LIBBUTANOABS)/butano_wt.mak
+	ifneq ($(strip $(DEVKITARM)),)
+		include $(LIBBUTANOABS)/butano_dka.mak
 	else
-$(error "DEVKITARM and WONDERFUL_TOOLCHAIN not found")
+		ifneq ($(strip $(WONDERFUL_TOOLCHAIN)),)
+			include $(LIBBUTANOABS)/butano_wt.mak
+		else
+	$(error "DEVKITARM and WONDERFUL_TOOLCHAIN not found")
+		endif
 	endif
 endif

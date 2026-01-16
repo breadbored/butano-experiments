@@ -13,7 +13,7 @@
  * @ingroup bg
  */
 
-#include "../hw/include/bn_hw_bgs_constants.h"
+#include "bn_hw_bgs_constants.h"
 
 /**
  * @brief Backgrounds related functions.

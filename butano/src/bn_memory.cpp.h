@@ -7,8 +7,8 @@
 
 #include "bn_compression_type.h"
 #include "bn_memory_manager.h"
-#include "../hw/include/bn_hw_memory.h"
-#include "../hw/include/bn_hw_decompress.h"
+#include "bn_hw_memory.h"
+#include "bn_hw_decompress.h"
 
 void* operator new(unsigned bytes)
 {

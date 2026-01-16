@@ -10,9 +10,9 @@
 #include "bn_bgs_manager.h"
 #include "bn_config_bg_blocks.h"
 #include "bn_affine_bg_big_map_canvas_size.h"
-#include "../hw/include/bn_hw_dma.h"
-#include "../hw/include/bn_hw_memory.h"
-#include "../hw/include/bn_hw_bg_blocks.h"
+#include "bn_hw_dma.h"
+#include "bn_hw_memory.h"
+#include "bn_hw_bg_blocks.h"
 
 #include "bn_bg_maps.cpp.h"
 #include "bn_bg_tiles.cpp.h"

@@ -5,7 +5,7 @@
 
 #include "bn_palette_bitmap_pixels_item.h"
 
-#include "../hw/include/bn_hw_decompress.h"
+#include "bn_hw_decompress.h"
 
 namespace bn
 {

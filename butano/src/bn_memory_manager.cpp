@@ -6,7 +6,7 @@
 #include "bn_memory_manager.h"
 
 #include "bn_best_fit_allocator.h"
-#include "../hw/include/bn_hw_memory.h"
+#include "bn_hw_memory.h"
 
 #include "bn_memory.cpp.h"
 #include "bn_cstdlib.cpp.h"

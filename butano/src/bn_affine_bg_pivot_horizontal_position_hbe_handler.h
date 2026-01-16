@@ -8,7 +8,7 @@
 
 #include "bn_bgs_manager.h"
 #include "bn_affine_bg_mat_attributes.h"
-#include "../hw/include/bn_hw_bgs.h"
+#include "bn_hw_bgs.h"
 
 namespace bn
 {

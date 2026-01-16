@@ -13,7 +13,7 @@
  * @ingroup sprite
  */
 
-#include "../hw/include/bn_hw_sprites_constants.h"
+#include "bn_hw_sprites_constants.h"
 
 /**
  * @brief Sprites related functions.

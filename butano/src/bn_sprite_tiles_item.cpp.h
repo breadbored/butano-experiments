@@ -6,7 +6,7 @@
 #include "bn_sprite_tiles_item.h"
 
 #include "bn_sprite_tiles_ptr.h"
-#include "../hw/include/bn_hw_decompress.h"
+#include "bn_hw_decompress.h"
 
 namespace bn
 {

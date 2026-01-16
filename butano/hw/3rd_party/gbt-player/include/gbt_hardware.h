@@ -8,7 +8,7 @@
 #define GBT_HARDWARE_H__
 
 #include <stdio.h>
-#include "../../../include/bn_hw_common.h"
+#include "../../../gba/include/bn_hw_common.h"
 
 #define BIT(n)              (1 << (n))
 

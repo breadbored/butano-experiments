@@ -9,8 +9,8 @@
 #include "bn_string_view.h"
 #include "bn_unordered_map.h"
 #include "bn_config_sprite_tiles.h"
-#include "../hw/include/bn_hw_sprite_tiles.h"
-#include "../hw/include/bn_hw_sprite_tiles_constants.h"
+#include "bn_hw_sprite_tiles.h"
+#include "bn_hw_sprite_tiles_constants.h"
 
 #include "bn_sprite_tiles.cpp.h"
 #include "bn_sprite_tiles_ptr.cpp.h"

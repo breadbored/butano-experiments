@@ -5,7 +5,7 @@
 
 #include "bn_gpio_manager.h"
 
-#include "../hw/include/bn_hw_gpio.h"
+#include "bn_hw_gpio.h"
 
 #include "bn_date.cpp.h"
 #include "bn_time.cpp.h"

@@ -11,7 +11,7 @@ endif
 #---------------------------------------------------------------------------------------------------------------------
 # List of directories containing libraries, this must be the top level containing include and lib directories:
 #---------------------------------------------------------------------------------------------------------------------
-LIBDIRS     :=	$(LIBBUTANOABS) $(LIBBUTANOABS)/hw/3rd_party/libtonc $(LIBBUTANOABS)/hw/3rd_party/libugba \
+LIBDIRS     :=	$(LIBBUTANOABS) $(LIBBUTANOABS)/hw/gba $(LIBBUTANOABS)/hw/3rd_party/libtonc $(LIBBUTANOABS)/hw/3rd_party/libugba \
 				$(USERLIBDIRS)
 
 ifeq ($(strip $(AUDIOBACKEND)),maxmod)
@@ -25,7 +25,7 @@ endif
 #---------------------------------------------------------------------------------------------------------------------
 # List of directories containing all butano source files:
 #---------------------------------------------------------------------------------------------------------------------
-BNSOURCES	:=	$(LIBBUTANOABS)/src $(LIBBUTANOABS)/hw/src \
+BNSOURCES	:=	$(LIBBUTANOABS)/src $(LIBBUTANOABS)/hw/gba/src \
 				$(LIBBUTANOABS)/hw/3rd_party/libtonc/asm \
 				$(LIBBUTANOABS)/hw/3rd_party/libtonc/src \
 				$(LIBBUTANOABS)/hw/3rd_party/libtonc/src/font \

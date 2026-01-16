@@ -14,7 +14,7 @@
  */
 
 #include "bn_size.h"
-#include "../hw/include/bn_hw_bitmap_bg_constants.h"
+#include "bn_hw_bitmap_bg_constants.h"
 
 /**
  * @brief Bitmap background related functions.

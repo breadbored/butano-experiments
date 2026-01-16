@@ -6,7 +6,7 @@
 #include "bn_sram.h"
 
 #include "bn_span.h"
-#include "../hw/include/bn_hw_sram.h"
+#include "bn_hw_sram.h"
 
 namespace _bn::sram
 {

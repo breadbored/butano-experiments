@@ -5,7 +5,7 @@
 
 #include "bn_link_manager.h"
 
-#include "../hw/include/bn_hw_link.h"
+#include "bn_hw_link.h"
 
 #include "bn_link.cpp.h"
 

@@ -7,7 +7,7 @@
 #define BN_REGULAR_BG_VERTICAL_POSITION_HBE_HANDLER_H
 
 #include "bn_bgs_manager.h"
-#include "../hw/include/bn_hw_bgs.h"
+#include "bn_hw_bgs.h"
 
 namespace bn
 {

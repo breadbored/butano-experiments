@@ -9,8 +9,8 @@
 #include "bn_unordered_map.h"
 #include "bn_identity_hasher.h"
 #include "bn_dmg_music_position.h"
-#include "../hw/include/bn_hw_audio.h"
-#include "../hw/include/bn_hw_dmg_audio.h"
+#include "bn_hw_audio.h"
+#include "bn_hw_dmg_audio.h"
 
 #include "bn_audio.cpp.h"
 #include "bn_music.cpp.h"

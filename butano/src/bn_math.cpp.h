@@ -5,7 +5,7 @@
 
 #include "bn_math.h"
 
-#include "../hw/include/bn_hw_math.h"
+#include "bn_hw_math.h"
 
 namespace _bn
 {

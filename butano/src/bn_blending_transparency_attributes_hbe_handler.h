@@ -8,7 +8,7 @@
 
 #include "bn_blending_transparency_attributes.h"
 #include "bn_display_manager.h"
-#include "../hw/include/bn_hw_display.h"
+#include "bn_hw_display.h"
 
 namespace bn
 {

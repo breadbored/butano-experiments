@@ -9,7 +9,7 @@
 #include "bn_palettes_bank.h"
 #include "bn_palettes_manager.h"
 #include "bn_palette_target_id.h"
-#include "../hw/include/bn_hw_palettes.h"
+#include "bn_hw_palettes.h"
 
 namespace bn
 {

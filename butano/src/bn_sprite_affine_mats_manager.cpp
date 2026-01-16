@@ -8,9 +8,9 @@
 #include "bn_vector.h"
 #include "bn_sprites_manager_item.h"
 #include "bn_affine_mat_attributes_reader.h"
-#include "../hw/include/bn_hw_sprites_constants.h"
-#include "../hw/include/bn_hw_sprite_affine_mats.h"
-#include "../hw/include/bn_hw_sprite_affine_mats_constants.h"
+#include "bn_hw_sprites_constants.h"
+#include "bn_hw_sprite_affine_mats.h"
+#include "bn_hw_sprite_affine_mats_constants.h"
 
 #include "bn_sprite_affine_mats.cpp.h"
 #include "bn_sprite_affine_mat_ptr.cpp.h"

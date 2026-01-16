@@ -8,7 +8,7 @@
 #include "bn_array.h"
 #include "bn_string.h"
 #include "bn_string_view.h"
-#include "../hw/include/bn_hw_text.h"
+#include "bn_hw_text.h"
 
 namespace bn
 {

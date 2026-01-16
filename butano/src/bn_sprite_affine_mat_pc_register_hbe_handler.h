@@ -8,8 +8,8 @@
 
 #include "bn_display.h"
 #include "bn_sprite_affine_mats_manager.h"
-#include "../hw/include/bn_hw_memory.h"
-#include "../hw/include/bn_hw_sprite_affine_mats.h"
+#include "bn_hw_memory.h"
+#include "bn_hw_sprite_affine_mats.h"
 
 namespace bn
 {

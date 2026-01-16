@@ -7,10 +7,10 @@
 
 #include <new>
 #include "bn_display.h"
-#include "../hw/include/bn_hw_dma.h"
-#include "../hw/include/bn_hw_irq.h"
-#include "../hw/include/bn_hw_audio.h"
-#include "../hw/include/bn_hw_memory.h"
+#include "bn_hw_dma.h"
+#include "bn_hw_irq.h"
+#include "bn_hw_audio.h"
+#include "bn_hw_memory.h"
 
 #include "bn_hdma.cpp.h"
 

@@ -11,7 +11,7 @@
 #include "bn_bpp_mode.h"
 #include "bn_algorithm.h"
 #include "bn_compression_type.h"
-#include "../hw/include/bn_hw_decompress.h"
+#include "bn_hw_decompress.h"
 
 #if BN_CFG_LOG_ENABLED
     #include "bn_log.h"

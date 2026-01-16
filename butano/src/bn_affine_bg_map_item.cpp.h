@@ -8,7 +8,7 @@
 #include "bn_bg_palette_ptr.h"
 #include "bn_affine_bg_map_ptr.h"
 #include "bn_affine_bg_tiles_ptr.h"
-#include "../hw/include/bn_hw_decompress.h"
+#include "bn_hw_decompress.h"
 
 namespace bn
 {

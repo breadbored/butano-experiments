@@ -14,7 +14,7 @@
  */
 
 #include "bn_size.h"
-#include "../hw/include/bn_hw_display_constants.h"
+#include "bn_hw_display_constants.h"
 
 /**
  * @brief Display related functions.

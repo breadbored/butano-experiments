@@ -9,7 +9,7 @@
 #include "bn_sprite_regular_second_attributes.h"
 #include "bn_sprites_manager.h"
 #include "bn_sprite_second_attributes_last_value.h"
-#include "../hw/include/bn_hw_sprites.h"
+#include "bn_hw_sprites.h"
 
 namespace bn
 {

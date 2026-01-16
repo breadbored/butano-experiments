@@ -17,8 +17,8 @@
 #include "bn_sprite_tiles_manager.h"
 #include "bn_affine_bg_mat_attributes.h"
 #include "bn_affine_mat_attributes_reader.h"
-#include "../hw/include/bn_hw_bgs.h"
-#include "../hw/include/bn_hw_display.h"
+#include "bn_hw_bgs.h"
+#include "bn_hw_display.h"
 
 #include "bn_bgs.cpp.h"
 #include "bn_affine_bg_ptr.cpp.h"

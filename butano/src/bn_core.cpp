@@ -28,26 +28,26 @@
 #include "bn_bg_blocks_manager.h"
 #include "bn_sprite_tiles_manager.h"
 #include "bn_hblank_effects_manager.h"
-#include "../hw/include/bn_hw_irq.h"
-#include "../hw/include/bn_hw_core.h"
-#include "../hw/include/bn_hw_gpio.h"
-#include "../hw/include/bn_hw_sram.h"
-#include "../hw/include/bn_hw_audio.h"
-#include "../hw/include/bn_hw_timer.h"
-#include "../hw/include/bn_hw_game_pak.h"
-#include "../hw/include/bn_hw_hblank_effects.h"
+#include "bn_hw_irq.h"
+#include "bn_hw_core.h"
+#include "bn_hw_gpio.h"
+#include "bn_hw_sram.h"
+#include "bn_hw_audio.h"
+#include "bn_hw_timer.h"
+#include "bn_hw_game_pak.h"
+#include "bn_hw_hblank_effects.h"
 
 #if BN_CFG_ASSERT_ENABLED
     #include "bn_assert_callback_type.h"
 #endif
 
 #if BN_CFG_ASSERT_ENABLED || BN_CFG_PROFILER_ENABLED
-    #include "../hw/include/bn_hw_show.h"
+    #include "bn_hw_show.h"
 #endif
 
 #ifdef BN_STACKTRACE
     #if BN_CFG_LOG_ENABLED
-        #include "../hw/include/bn_hw_stacktrace.h"
+        #include "bn_hw_stacktrace.h"
     #endif
 #endif
 

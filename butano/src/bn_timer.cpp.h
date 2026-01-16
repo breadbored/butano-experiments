@@ -5,7 +5,7 @@
 
 #include "bn_timer.h"
 
-#include "../hw/include/bn_hw_timer.h"
+#include "bn_hw_timer.h"
 
 namespace bn
 {

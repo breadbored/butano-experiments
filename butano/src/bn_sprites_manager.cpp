@@ -9,7 +9,7 @@
 #include "bn_sprite_first_attributes.h"
 #include "bn_sprite_regular_second_attributes.h"
 #include "bn_sorted_sprites.h"
-#include "../hw/include/bn_hw_sprite_affine_mats_constants.h"
+#include "bn_hw_sprite_affine_mats_constants.h"
 
 #if ! BN_CFG_SPRITES_USE_IWRAM
     #include "bn_sprites_manager_hot.h"

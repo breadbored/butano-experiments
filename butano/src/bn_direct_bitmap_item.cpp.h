@@ -5,7 +5,7 @@
 
 #include "bn_direct_bitmap_item.h"
 
-#include "../hw/include/bn_hw_decompress.h"
+#include "bn_hw_decompress.h"
 
 namespace bn
 {

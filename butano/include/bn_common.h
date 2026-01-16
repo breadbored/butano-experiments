@@ -15,7 +15,7 @@
 
 #include <cstdint>
 #include <cstddef>
-#include "../hw/include/bn_hw_common.h"
+#include "bn_hw_common.h"
 
 /**
  * @def BN_CONST

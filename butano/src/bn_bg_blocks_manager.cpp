@@ -1802,8 +1802,10 @@ int create_regular_map_at(const regular_bg_map_item& map_item, const regular_bg_
               "Invalid tiles count: ", tiles.tiles_count(), " - ", int(palette.bpp()));
     BN_BASIC_ASSERT(compression == compression_type::NONE || ! big, "Compressed big maps are not supported");
 
+    bpp_mode tiles_bpp = palette.bpp();
+
     int result = _create_at_impl(
-                create_data::from_regular_map(data_ptr, dimensions, compression, big, move(tiles), move(palette)),
+                create_data::from_regular_map(data_ptr, dimensions, tiles_bpp, compression, big, move(tiles), move(palette)),
                 sbb);
 
     if(result >= 0)

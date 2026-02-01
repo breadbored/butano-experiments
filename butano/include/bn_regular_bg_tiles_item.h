@@ -200,6 +200,16 @@ public:
      */
     [[nodiscard]] optional<regular_bg_tiles_ptr> create_tiles_optional(bool allow_offset) const;
 
+    /**
+     * @brief Creates regular_bg_tiles_ptr at a specific charblock.
+     * @param cbb Charblock index (0-3) where tiles should be allocated.
+     * @return optional<regular_bg_tiles_ptr> to allocated tiles if successful, nullopt otherwise.
+     *
+     * This is useful when you need tiles at a specific VRAM address, such as for
+     * Game Boy Player detection which requires tiles at charblock 2 (0x06008000).
+     */
+    [[nodiscard]] optional<regular_bg_tiles_ptr> create_tiles_at(int cbb) const;
+
     /// @cond DO_NOT_DOCUMENT
 
     [[deprecated("Call create_tiles_optional() method instead")]]

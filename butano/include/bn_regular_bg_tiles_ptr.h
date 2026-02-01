@@ -147,6 +147,16 @@ public:
     [[nodiscard]] static optional<regular_bg_tiles_ptr> create_optional(
             const regular_bg_tiles_item& tiles_item, bool allow_offset);
 
+    /**
+     * @brief Creates a regular_bg_tiles_ptr at a specific charblock.
+     * @param tiles_item regular_bg_tiles_item containing the tiles to copy to VRAM.
+     * @param cbb Charblock index (0-3) where tiles should be allocated.
+     * @return optional<regular_bg_tiles_ptr> to allocated tiles if successful, nullopt otherwise.
+     */
+    [[nodiscard]] static optional<regular_bg_tiles_ptr> create_at(
+            const regular_bg_tiles_item& tiles_item, int cbb);
+
+
     /// @cond DO_NOT_DOCUMENT
 
     [[deprecated("Call create_optional() method instead")]]

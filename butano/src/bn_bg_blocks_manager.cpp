@@ -1261,6 +1261,45 @@ namespace
         return -1;
     }
 
+    [[nodiscard]] int _create_at_impl(create_data&& create_data, int target_start_block)
+    {
+        static_data& data = data_ref();
+        auto begin = data.items.begin();
+        auto end = data.items.end();
+        int blocks_count = create_data.blocks_count;
+
+        // find a free block that contains our target start_block
+        for(auto iterator = begin; iterator != end; ++iterator)
+        {
+            item_type& item = *iterator;
+            int item_start = item.start_block;
+            int item_end = item_start + item.blocks_count;
+
+            if(target_start_block >= item_start && target_start_block < item_end)
+            {
+                if(item.status() != status_type::FREE && item.status() != status_type::TO_REMOVE)
+                {
+                    // block is already in use
+                    return -1;
+                }
+
+                int available_from_target = item_end - target_start_block;
+                if(available_from_target < blocks_count)
+                {
+                    // not enough contiguous space
+                    return -1;
+                }
+
+                int padding_blocks_count = target_start_block - item_start;
+
+                bool delay = item.status() == status_type::TO_REMOVE ? true : data.delay_commit;
+                return _create_item(iterator.id(), padding_blocks_count, delay, move(create_data));
+            }
+        }
+
+        return -1;
+    }
+
     [[nodiscard]] int _allocate_impl(create_data&& create_data)
     {
         static_data& data = data_ref();
@@ -1602,6 +1641,41 @@ int create_regular_tiles(const regular_bg_tiles_item& tiles_item, bool allow_off
     return result;
 }
 
+
+int create_regular_tiles_at(const regular_bg_tiles_item& tiles_item, int cbb)
+{
+    BN_ASSERT(cbb >= 0 && cbb <= 3, "Invalid charblock: ", cbb);
+
+    const span<const tile>& tiles_ref = tiles_item.tiles_ref();
+    auto tiles_data = reinterpret_cast<const uint16_t*>(tiles_ref.data());
+    int tiles_count = tiles_ref.size();
+    int half_words = _tiles_to_half_words(tiles_count);
+    bpp_mode bpp = tiles_item.bpp();
+    compression_type compression = tiles_item.compression();
+
+    BN_BG_BLOCKS_LOG("bg_blocks_manager - CREATE REGULAR TILES AT CBB ", cbb, ": ",
+                     tiles_data, " - ", tiles_count, " - ", _ceil_half_words_to_blocks(half_words), " - ",
+                     int(bpp), " - ", int(compression));
+
+    // cbb * 8 = start_block (each charblock is 8 blocks of 512 bytes = 4KB)
+    int target_start_block = cbb * hw::bg_blocks::tiles_alignment_blocks_count();
+
+    int result = _create_at_impl(create_data::from_regular_tiles(tiles_data, half_words, bpp, compression, false),
+                                  target_start_block);
+
+    if(result >= 0)
+    {
+        BN_BG_BLOCKS_LOG("CREATED AT. start_block: ", data_ref().items.item(result).start_block);
+        BN_BG_BLOCKS_LOG_STATUS();
+    }
+    else
+    {
+        BN_BG_BLOCKS_LOG("NOT CREATED AT CBB ", cbb);
+    }
+
+    return result;
+}
+
 int create_affine_tiles(const affine_bg_tiles_item& tiles_item, bool allow_offset, bool optional)
 {
     const span<const tile>& tiles_ref = tiles_item.tiles_ref();
@@ -1704,6 +1778,42 @@ int create_regular_map(const regular_bg_map_item& map_item, const regular_bg_map
                      "\n\nThere's no more available VRAM.",
                      _status_log_message);
         }
+    }
+
+    return result;
+}
+
+
+int create_regular_map_at(const regular_bg_map_item& map_item, const regular_bg_map_cell* data_ptr,
+                          regular_bg_tiles_ptr&& tiles, bg_palette_ptr&& palette, int sbb)
+{
+    BN_ASSERT(sbb >= 0 && sbb <= 31, "Invalid screenblock: ", sbb);
+
+    const size& dimensions = map_item.dimensions();
+    compression_type compression = map_item.compression();
+    bool big = map_item.big();
+
+    BN_BG_BLOCKS_LOG("bg_blocks_manager - CREATE REGULAR MAP AT SBB ", sbb, ": ", data_ptr, " - ",
+                     dimensions.width(), " - ", dimensions.height(), " - ", tiles.id(), " - ", palette.id(), " - ",
+                     int(compression), " - ", big);
+
+    BN_ASSERT(aligned<4>(data_ptr), "Map cells are not aligned");
+    BN_ASSERT(regular_bg_tiles_item::valid_tiles_count(tiles.tiles_count(), palette.bpp()),
+              "Invalid tiles count: ", tiles.tiles_count(), " - ", int(palette.bpp()));
+    BN_BASIC_ASSERT(compression == compression_type::NONE || ! big, "Compressed big maps are not supported");
+
+    int result = _create_at_impl(
+                create_data::from_regular_map(data_ptr, dimensions, compression, big, move(tiles), move(palette)),
+                sbb);
+
+    if(result >= 0)
+    {
+        BN_BG_BLOCKS_LOG("CREATED AT. start_block: ", data_ref().items.item(result).start_block);
+        BN_BG_BLOCKS_LOG_STATUS();
+    }
+    else
+    {
+        BN_BG_BLOCKS_LOG("NOT CREATED AT SBB ", sbb);
     }
 
     return result;

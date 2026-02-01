@@ -161,6 +161,22 @@ optional<regular_bg_map_ptr> regular_bg_map_ptr::create_optional(
     return result;
 }
 
+optional<regular_bg_map_ptr> regular_bg_map_ptr::create_at(
+        const regular_bg_map_item& map_item, regular_bg_tiles_ptr tiles, bg_palette_ptr palette, int sbb)
+{
+    int handle = bg_blocks_manager::create_regular_map_at(
+                map_item, map_item.cells_ptr(), move(tiles), move(palette), sbb);
+    optional<regular_bg_map_ptr> result;
+
+    if(handle >= 0)
+    {
+        result = regular_bg_map_ptr(handle);
+    }
+
+    return result;
+}
+
+
 optional<regular_bg_map_ptr> regular_bg_map_ptr::create_optional(const regular_bg_item& item)
 {
     optional<regular_bg_tiles_ptr> tiles = regular_bg_tiles_ptr::create_optional(item.tiles_item());

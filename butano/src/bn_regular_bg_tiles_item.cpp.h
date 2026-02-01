@@ -88,4 +88,10 @@ optional<regular_bg_tiles_ptr> regular_bg_tiles_item::create_new_tiles_optional(
     return regular_bg_tiles_ptr::create_optional(*this);
 }
 
+optional<regular_bg_tiles_ptr> regular_bg_tiles_item::create_tiles_at(int cbb) const
+{
+    return regular_bg_tiles_ptr::create_at(*this, cbb);
+}
+
+
 }

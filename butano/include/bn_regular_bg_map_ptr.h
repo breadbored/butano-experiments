@@ -248,6 +248,18 @@ public:
      */
     [[nodiscard]] static optional<regular_bg_map_ptr> create_optional(const regular_bg_item& item, int map_index);
 
+    /**
+     * @brief Creates a regular_bg_map_ptr at a specific screenblock.
+     * @param map_item regular_bg_map_item containing the map cells to copy to VRAM.
+     * @param tiles Referenced tiles of the map.
+     * @param palette Referenced color palette of the map.
+     * @param sbb Screenblock index (0-31) where map should be allocated.
+     * @return optional<regular_bg_map_ptr> to allocated map if successful, nullopt otherwise.
+     */
+    [[nodiscard]] static optional<regular_bg_map_ptr> create_at(
+            const regular_bg_map_item& map_item, regular_bg_tiles_ptr tiles, bg_palette_ptr palette, int sbb);
+
+
     /// @cond DO_NOT_DOCUMENT
 
     [[deprecated("Call create_optional() method instead")]]

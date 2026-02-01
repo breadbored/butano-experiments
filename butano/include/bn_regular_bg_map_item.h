@@ -463,6 +463,20 @@ public:
     [[nodiscard]] optional<regular_bg_map_ptr> create_map_optional(
             regular_bg_tiles_ptr tiles, bg_palette_ptr palette, int map_index) const;
 
+
+    /**
+     * @brief Creates regular_bg_map_ptr at a specific screenblock.
+     * @param tiles regular_bg_tiles_ptr used by the map.
+     * @param palette bg_palette_ptr used by the map.
+     * @param sbb Screenblock index (0-31) where map should be allocated.
+     * @return optional<regular_bg_map_ptr> to allocated map if successful, nullopt otherwise.
+     *
+     * This is useful when you need the map at a specific VRAM address, such as for
+     * Game Boy Player detection which requires the map at screenblock 0 (0x06000000).
+     */
+    [[nodiscard]] optional<regular_bg_map_ptr> create_map_at(
+            regular_bg_tiles_ptr tiles, bg_palette_ptr palette, int sbb) const;
+
     /// @cond DO_NOT_DOCUMENT
 
     [[deprecated("Call create_map_optional() method instead")]]

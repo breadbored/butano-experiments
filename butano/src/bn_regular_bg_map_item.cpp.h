@@ -110,6 +110,13 @@ optional<regular_bg_map_ptr> regular_bg_map_item::create_map_optional(
     return regular_bg_map_ptr::create_optional(*this, move(tiles), move(palette), map_index);
 }
 
+optional<regular_bg_map_ptr> regular_bg_map_item::create_map_at(
+        regular_bg_tiles_ptr tiles, bg_palette_ptr palette, int sbb) const
+{
+    return regular_bg_map_ptr::create_at(*this, move(tiles), move(palette), sbb);
+}
+
+
 optional<regular_bg_map_ptr> regular_bg_map_item::create_new_map_optional(
         regular_bg_tiles_ptr tiles, bg_palette_ptr palette) const
 {

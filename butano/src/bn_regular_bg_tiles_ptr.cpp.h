@@ -63,6 +63,20 @@ optional<regular_bg_tiles_ptr> regular_bg_tiles_ptr::create_optional(
     return result;
 }
 
+optional<regular_bg_tiles_ptr> regular_bg_tiles_ptr::create_at(const regular_bg_tiles_item& tiles_item, int cbb)
+{
+    int handle = bg_blocks_manager::create_regular_tiles_at(tiles_item, cbb);
+    optional<regular_bg_tiles_ptr> result;
+
+    if(handle >= 0)
+    {
+        result = regular_bg_tiles_ptr(handle);
+    }
+
+    return result;
+}
+
+
 optional<regular_bg_tiles_ptr> regular_bg_tiles_ptr::allocate_optional(int tiles_count, bpp_mode bpp)
 {
     return allocate_optional(tiles_count, bpp, bg_blocks_manager::allow_tiles_offset());

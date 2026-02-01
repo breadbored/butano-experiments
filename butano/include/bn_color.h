@@ -40,7 +40,7 @@ public:
     constexpr explicit color(int data) :
         _data(uint16_t(data))
     {
-        // BN_ASSERT(data >= 0 && data <= 0x7FFF, "Invalid data: ", data);
+        BN_ASSERT(data >= 0 && data <= 0x7FFF, "Invalid data: ", data);
     }
 
     /**

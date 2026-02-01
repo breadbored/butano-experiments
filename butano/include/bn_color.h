@@ -40,7 +40,21 @@ public:
     constexpr explicit color(int data) :
         _data(uint16_t(data))
     {
-        BN_ASSERT(data >= 0 && data <= 0x7FFF, "Invalid data: ", data);
+        // BN_ASSERT(data >= 0 && data <= 0x7FFF, "Invalid data: ", data);
+    }
+
+    /**
+     * @brief Constructor.
+     * @param data Color value in GBA format. Safety optional.
+     */
+    constexpr explicit color(int data, bool unsafe_u16) :
+        _data(uint16_t(data))
+    {
+        if (unsafe_u16) {
+            BN_ASSERT(data >= 0 && data <= 0xFFFF, "Invalid data: ", data);
+        } else {
+            BN_ASSERT(data >= 0 && data <= 0x7FFF, "Invalid data: ", data);
+        }
     }
 
     /**
@@ -71,6 +85,20 @@ public:
     constexpr void set_data(int data)
     {
         BN_ASSERT(data >= 0 && data <= 0x7FFF, "Invalid data: ", data);
+
+        _data = uint16_t(data);
+    }
+
+    /**
+     * @brief Sets the representation of this color in GBA format. Safety optional.
+     */
+    constexpr void set_data(int data, bool unsafe_u16)
+    {
+        if (unsafe_u16) {
+            BN_ASSERT(data >= 0 && data <= 0xFFFF, "Invalid data: ", data);
+        } else {
+            BN_ASSERT(data >= 0 && data <= 0x7FFF, "Invalid data: ", data);
+        }
 
         _data = uint16_t(data);
     }
